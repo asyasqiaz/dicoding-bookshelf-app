@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookshelf Application</title>
+  <link rel="stylesheet" href="dist/output.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="bg-gray-50 py-4 border-b border-gray-200 shadow">
+      <div class="container flex items-center justify-center mx-auto">
+        <a href="#" class="flex items-center">
+          <img src="img/logo.svg" class="h-6 mr-3 sm:h-9" alt="Bookshelf Logo" />
+          <h1 class="self-center text-3xl font-semibold whitespace-nowrap text-gray-900">
+            Bookshelf
+          </h1>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="flex flex-wrap justify-center">
+      <div class="shelves-section flex flex-col w-full max-w-sm my-8 mx-4 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8">
+        <div class="complete-section space-y-6">
+          <h2 class="text-2xl font-medium text-gray-900">Tentang</h2>
+          <p class="text-base">
+            Bookshelf merupakan aplikasi untuk mengelola buku-buku yang
+            dimiliki untuk disusun ke dalam rak berdasarkan selesainya
+            aktivitas membaca. Pengguna harus memasukkan informasi umum
+            terkait buku, seperti judul, penulis, dan tahun terbit buku.
+          </p>
+          <img src="img/ilustrasi.png" alt="Ilustrasi Bookshelf" />
+        </div>
+      </div>
+      <div class="input-section flex flex-col w-full max-w-sm my-8 mx-4 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8">
+        <form class="space-y-6" id="input-book">
+          <h2 class="text-2xl font-medium text-gray-900">Masukkan Buku</h2>
+          <div class="input">
+            <label for="inputBookTitle" class="block mb-2 text-base font-medium text-gray-900">Judul</label>
+            <input id="inputBookTitle" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full focus:ring-1 p-2.5" required />
+          </div>
+          <div class="input">
+            <label for="inputBookAuthor" class="block mb-2 text-base font-medium text-gray-900">Penulis</label>
+            <input id="inputBookAuthor" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full focus:ring-1 p-2.5" required />
+          </div>
+          <div class="input">
+            <label for="inputBookYear" class="block mb-2 text-base font-medium text-gray-900">Tahun</label>
+            <input id="inputBookYear" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full focus:ring-1 p-2.5" required />
+          </div>
+          <div class="flex items-start">
+            <div class="flex items-start">
+              <div class="flex items-center h-5">
+                <input id="inputBookIsComplete" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 checked:bg-sky-500" />
+              </div>
+              <label for="inputBookIsComplete" class="ml-2 text-sm font-medium text-gray-900">Selesai dibaca</label>
+            </div>
+          </div>
+          <button value="Submit" name="Submit" type="submit" class="w-full text-white bg-sky-500 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-sky-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+            Masukkan ke Rak <span>Belum Selesai Dibaca</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap justify-center items-start">
+      <div class="search-section flex flex-col w-full max-w-sm my-8 mx-4 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8">
+        <form id="searchBook" class="space-y-6">
+          <h2 class="text-2xl font-medium text-gray-900">Cari Buku</h2>
+          <label for="searchBookTitle" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <input type="text" id="searchBookTitle" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1" placeholder="Ketik judul buku" required />
+            <button id="searchSubmit" type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-sky-500 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-sky-100 font-medium rounded-lg text-sm px-4 py-2">
+              Cari
+            </button>
+          </div>
+        </form>
+      </div>
+      <div
+        class="shelves-section flex flex-col w-full max-w-sm my-8 mx-4 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8">
+        <div class="space-y-6">
+          <h2 class="text-2xl font-medium text-gray-900">
+            Belum Selesai Dibaca
+          </h2>
+          <div id="incompleteBookshelfList" class="space-y-6"></div>
+        </div>
+      </div>
+      <div
+        class="shelves-section flex flex-col w-full max-w-sm my-8 mx-4 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8">
+        <div class="space-y-6">
+          <h2 class="text-2xl font-medium text-gray-900">Selesai Dibaca</h2>
+          <div id="completeBookshelfList" class="space-y-6"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js" type="text/javascript"></script>
+</body>
+
+</html>
